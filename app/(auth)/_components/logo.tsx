@@ -8,7 +8,7 @@ const font = Poppins({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
-export const Logo = () => {
+export function Logo() {
   return (
     <div className="flex flex-col items-center gap-y-4">
       <div className="bg-white rounded-full p-1">
@@ -20,4 +20,4 @@ export const Logo = () => {
       </div>
     </div>
   );
-};
+}
