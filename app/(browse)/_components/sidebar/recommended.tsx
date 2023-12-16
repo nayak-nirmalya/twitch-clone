@@ -5,6 +5,8 @@ import { User } from "@prisma/client";
 
 import { useSidebar } from "@/store/use-sidebar";
 
+import { UserItem } from "./user-item";
+
 export function Recommended({ data }: { data: User[] }) {
   const { collapsed } = useSidebar((state) => state);
 
@@ -19,7 +21,12 @@ export function Recommended({ data }: { data: User[] }) {
       )}
       <ul className="space-y-2 px-2">
         {data.map((user) => (
-          <div key={user.id}>{user.username}</div>
+          <UserItem
+            key={user.id}
+            imageUrl={user.imageUrl}
+            username={user.username}
+            isLive={true}
+          />
         ))}
       </ul>
     </div>
