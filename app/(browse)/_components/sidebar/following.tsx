@@ -5,6 +5,8 @@ import { Follow, User } from "@prisma/client";
 
 import { useSidebar } from "@/store/use-sidebar";
 
+import { UserItem } from "./user-item";
+
 export function Following({
   data,
 }: {
@@ -21,6 +23,16 @@ export function Following({
           <p className="text-sm text-muted-foreground">Following</p>
         </div>
       )}
+      <ul className="space-y-2 px-2">
+        {data.map((follow) => (
+          <UserItem
+            key={follow.following.id}
+            username={follow.following.username}
+            imageUrl={follow.following.imageUrl}
+            isLive={true}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
