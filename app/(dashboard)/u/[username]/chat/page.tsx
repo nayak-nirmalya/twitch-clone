@@ -1,6 +1,9 @@
+import React from "react";
+
 import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/stream-service";
-import React from "react";
+
+import { ToggleCard } from "./_components/toggle-card";
 
 export default async function ChatPage() {
   const self = await getSelf();
@@ -14,6 +17,13 @@ export default async function ChatPage() {
     <div className="p-6">
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Chat settings</h1>
+      </div>
+      <div className="space-y-4">
+        <ToggleCard
+          field="isChatEnabled"
+          label="Enable chat"
+          value={stream.isChatEnabled}
+        />
       </div>
     </div>
   );
