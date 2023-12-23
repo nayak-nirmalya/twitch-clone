@@ -24,6 +24,16 @@ export default async function ChatPage() {
           label="Enable chat"
           value={stream.isChatEnabled}
         />
+        <ToggleCard
+          field="isChatDelayed"
+          label="Delay chat"
+          value={stream.isChatDelayed}
+        />
+        <ToggleCard
+          field="isChatFollowersOnly"
+          label="Must be following to chat"
+          value={stream.isChatFollowersOnly}
+        />
       </div>
     </div>
   );
