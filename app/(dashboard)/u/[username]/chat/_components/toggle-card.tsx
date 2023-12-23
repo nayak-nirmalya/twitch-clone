@@ -5,6 +5,7 @@ import { toast } from "sonner";
 
 import { Switch } from "@/components/ui/switch";
 import { updateStream } from "@/actions/stream";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type FieldTypes = "isChatEnabled" | "isChatDelayed" | "isChatFollowersOnly";
 
@@ -45,4 +46,8 @@ export function ToggleCard({
       </div>
     </div>
   );
+}
+
+export function ToggleCardSkeleton() {
+  return <Skeleton className="rounded-xl p-10 w-full" />;
 }
