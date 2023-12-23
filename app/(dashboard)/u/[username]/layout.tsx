@@ -3,6 +3,8 @@ import { redirect } from "next/navigation";
 
 import { getSelfByUsername } from "@/lib/auth-service";
 
+import { Navbar } from "./_components/navbar";
+
 export default async function CreatorLayout({
   children,
   params: { username },
@@ -14,5 +16,10 @@ export default async function CreatorLayout({
 
   if (!self) redirect("/");
 
-  return <div>{children}</div>;
+  return (
+    <>
+      <Navbar />
+      <div className="flex h-full pt-20">{children}</div>
+    </>
+  );
 }
