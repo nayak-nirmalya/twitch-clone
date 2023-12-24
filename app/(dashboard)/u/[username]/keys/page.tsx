@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Button } from "@/components/ui/button";
 import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/stream-service";
 
 import { URLCard } from "./_components/url-card";
 import { KeyCard } from "./_components/key-card";
+import { ConnectModal } from "./_components/connect-modal";
 
 export default async function KeysPage() {
   const self = await getSelf();
@@ -19,7 +19,7 @@ export default async function KeysPage() {
     <div className="p-6">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Keys & URLs</h1>
-        <Button variant="primary">Generate</Button>
+        <ConnectModal />
       </div>
       <div className="space-y-4">
         <URLCard value={stream.serverUrl} />
