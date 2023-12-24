@@ -2,7 +2,7 @@ import React from "react";
 
 import { Input } from "@/components/ui/input";
 
-import { CopyButton } from "./copy_button";
+import { CopyButton } from "./copy-button";
 
 export function URLCard({ value }: { value: string | null }) {
   return (

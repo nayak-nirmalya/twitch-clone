@@ -5,6 +5,7 @@ import { getSelf } from "@/lib/auth-service";
 import { getStreamByUserId } from "@/lib/stream-service";
 
 import { URLCard } from "./_components/url-card";
+import { KeyCard } from "./_components/key-card";
 
 export default async function KeysPage() {
   const self = await getSelf();
@@ -22,6 +23,7 @@ export default async function KeysPage() {
       </div>
       <div className="space-y-4">
         <URLCard value={stream.serverUrl} />
+        <KeyCard value={stream.streamKey} />
       </div>
     </div>
   );
