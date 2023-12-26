@@ -17,7 +17,11 @@ export const getFollwedUser = async () => {
         },
       },
       include: {
-        following: true,
+        following: {
+          include: {
+            stream: true,
+          },
+        },
       },
     });
 
