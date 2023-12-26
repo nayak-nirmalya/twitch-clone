@@ -18,6 +18,7 @@ export const getUserById = async (id: string) => {
     where: {
       id,
     },
+    include: { stream: true },
   });
 
   return user;
