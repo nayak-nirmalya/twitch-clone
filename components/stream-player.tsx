@@ -3,6 +3,8 @@
 import React from "react";
 import { Stream, User } from "@prisma/client";
 
+import { useViewerToken } from "@/hooks/use-viewer-token";
+
 export default function StreamPlayer({
   user,
   stream,
@@ -12,5 +14,11 @@ export default function StreamPlayer({
   stream: Stream;
   isFollwing: boolean;
 }) {
-  return <div>StreamPlayer</div>;
+  const { identity, name, token } = useViewerToken(user.id);
+
+  if (!token || !identity || !name) {
+    return <div>Can not watch the stream.</div>;
+  }
+
+  return <div>Allowed to watch stream.</div>;
 }
