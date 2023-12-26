@@ -25,6 +25,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "jwt-decode": "^4.0.0",
     "livekit-client": "^1.15.5",
     "livekit-server-sdk": "^1.2.7",
     "lucide-react": "^0.294.0",
