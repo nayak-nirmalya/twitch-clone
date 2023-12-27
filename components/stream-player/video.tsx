@@ -11,6 +11,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 
 import { OfflineVideo } from "./offline-video";
+import { LoadingVideo } from "./loading-video";
 
 export function Video({
   hostName,
@@ -31,7 +32,7 @@ export function Video({
   if (!participant && connectionState === ConnectionState.Connected) {
     content = <OfflineVideo username={hostName} />;
   } else if (!participant || tracks.length === 0) {
-    content = <p>Loading...</p>;
+    content = <LoadingVideo label={connectionState} />;
   } else {
     content = <p>Live video</p>;
   }
