@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-
 import { ConnectionState, Track } from "livekit-client";
 import {
   useConnectionState,
@@ -10,6 +9,8 @@ import {
 } from "@livekit/components-react";
 
 import { Skeleton } from "@/components/ui/skeleton";
+
+import { OfflineVideo } from "./offline-video";
 
 export function Video({
   hostName,
@@ -28,8 +29,11 @@ export function Video({
   let content;
 
   if (!participant && connectionState === ConnectionState.Connected) {
+    content = <OfflineVideo username={hostName} />;
   } else if (!participant || tracks.length === 0) {
+    content = <p>Loading...</p>;
   } else {
+    content = <p>Live video</p>;
   }
 
   return <div className="aspect-video border-b group relative">{content}</div>;
