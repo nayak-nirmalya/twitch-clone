@@ -4,10 +4,12 @@ import React from "react";
 
 import { Skeleton } from "@/components/ui/skeleton";
 
+import { ChatToggle } from "./chat-toggle";
+
 export function ChatHeader() {
   return (
     <div className="relative p-3 border-b">
-      {/* TODO: Toggle Chat Sidebar */}
+      <ChatToggle />
       <p className="font-semibold text-primary text-center">Stream Chat</p>
       {/* TODO: Toggle Chat Community */}
     </div>
