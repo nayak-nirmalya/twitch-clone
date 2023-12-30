@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
+import { ChatInfo } from "./chat-info";
+
 export function ChatForm({
   value,
   isDelayed,
@@ -57,6 +59,7 @@ export function ChatForm({
       className="flex flex-col items-center gap-y-4 p-3"
     >
       <div className="w-full">
+        <ChatInfo isDelayed={isDelayed} isFollowersOnly={isFollowersOnly} />
         <Input
           onChange={(e) => onChange(e.target.value)}
           value={value}
