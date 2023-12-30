@@ -13,6 +13,7 @@ import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 
 import { ChatHeader, ChatHeaderSkeleton } from "./chat-header";
 import { ChatForm } from "./chat-form";
+import { ChatList } from "./chat-list";
 
 export function Chat({
   hostName,
@@ -69,6 +70,7 @@ export function Chat({
       <ChatHeader />
       {variant === ChatVariant.CHAT && (
         <>
+          <ChatList messages={reversedMessages} isHidden={isHidden} />
           <ChatForm
             onSubmit={onSubmit}
             value={value}
