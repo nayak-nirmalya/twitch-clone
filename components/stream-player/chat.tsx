@@ -14,6 +14,7 @@ import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 import { ChatHeader, ChatHeaderSkeleton } from "./chat-header";
 import { ChatForm } from "./chat-form";
 import { ChatList } from "./chat-list";
+import { ChatCommunity } from "./chat-community";
 
 export function Chat({
   hostName,
@@ -84,7 +85,11 @@ export function Chat({
       )}
       {variant === ChatVariant.COMMUNITY && (
         <>
-          <p>Community mode</p>
+          <ChatCommunity
+            hostName={hostName}
+            viewerName={viewerName}
+            isHidden={isHidden}
+          />
         </>
       )}
     </div>
