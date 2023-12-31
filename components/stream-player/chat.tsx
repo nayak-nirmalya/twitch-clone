@@ -12,8 +12,8 @@ import { ConnectionState } from "livekit-client";
 import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 
 import { ChatHeader, ChatHeaderSkeleton } from "./chat-header";
-import { ChatForm } from "./chat-form";
-import { ChatList } from "./chat-list";
+import { ChatForm, ChatFormSkeleton } from "./chat-form";
+import { ChatList, ChatListSkeleton } from "./chat-list";
 import { ChatCommunity } from "./chat-community";
 
 export function Chat({
@@ -92,6 +92,16 @@ export function Chat({
           />
         </>
       )}
+    </div>
+  );
+}
+
+export function ChatSkeleton() {
+  return (
+    <div className="flex flex-col border-l border-b pt-0 h-[calc(100vh-80px)] border-2">
+      <ChatHeaderSkeleton />
+      <ChatListSkeleton />
+      <ChatFormSkeleton />
     </div>
   );
 }
