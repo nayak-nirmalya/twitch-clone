@@ -10,6 +10,8 @@ import { UserIcon } from "lucide-react";
 import { UserAvatar } from "@/components/user-avatar";
 import { VerifiedMark } from "@/components/verified-mark";
 
+import { Actions } from "./actions";
+
 export function Header({
   hostIdentity,
   hostName,
@@ -65,6 +67,11 @@ export function Header({
           )}
         </div>
       </div>
+      <Actions
+        hostIdentity={hostIdentity}
+        isFollowing={isFollowing}
+        isHost={isHost}
+      />
     </div>
   );
 }
