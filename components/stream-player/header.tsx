@@ -7,10 +7,11 @@ import {
 } from "@livekit/components-react";
 import { UserIcon } from "lucide-react";
 
-import { UserAvatar } from "@/components/user-avatar";
+import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
 import { VerifiedMark } from "@/components/verified-mark";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import { Actions } from "./actions";
+import { Actions, ActionsSkeleton } from "./actions";
 
 export function Header({
   hostIdentity,
@@ -72,6 +73,21 @@ export function Header({
         isFollowing={isFollowing}
         isHost={isHost}
       />
+    </div>
+  );
+}
+
+export function HeaderSkeleton() {
+  return (
+    <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 items-start justify-between px-4">
+      <div className="flex items-center gap-x-2">
+        <UserAvatarSkeleton size="lg" />
+        <div className="space-y-2">
+          <Skeleton className="h-6 w-32" />
+          <Skeleton className="h-4 w-24" />
+        </div>
+      </div>
+      <ActionsSkeleton />
     </div>
   );
 }

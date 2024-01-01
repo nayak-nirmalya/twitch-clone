@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import { Participant, Track } from "livekit-client";
 import { useTracks } from "@livekit/components-react";
