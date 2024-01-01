@@ -3,6 +3,7 @@
 import React from "react";
 
 import { UserAvatar } from "@/components/user-avatar";
+import { VerifiedMark } from "@/components/verified-mark";
 
 export function Header({
   hostIdentity,
@@ -32,6 +33,7 @@ export function Header({
         <div className="space-y-1">
           <div className="flex items-center gap-x-2">
             <h2 className="text-lg font-semibold">{hostName}</h2>
+            <VerifiedMark />
           </div>
         </div>
       </div>
