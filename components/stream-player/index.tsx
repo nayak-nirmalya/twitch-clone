@@ -8,9 +8,10 @@ import { useViewerToken } from "@/hooks/use-viewer-token";
 import { useChatSidebar } from "@/store/use-chat-sidebar";
 import { cn } from "@/lib/utils";
 
+import { ChatToggle } from "./chat-toggle";
 import { Video, VideoSkeleton } from "./video";
 import { Chat, ChatSkeleton } from "./chat";
-import { ChatToggle } from "./chat-toggle";
+import { Header } from "./header";
 
 export function StreamPlayer({
   user,
@@ -45,6 +46,14 @@ export function StreamPlayer({
       >
         <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
           <Video hostName={user.username} hostIdentity={user.id} />
+          <Header
+            imageUrl={user.imageUrl}
+            hostName={user.username}
+            hostIdentity={user.id}
+            isFollowing={isFollwing}
+            name={stream.name}
+            viewerIdentity={identity}
+          />
         </div>
         <div className={cn("col-span-1", collapsed && "hidden")}>
           <Chat
