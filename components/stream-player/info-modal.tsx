@@ -39,7 +39,10 @@ export function InfoModal({
 
     startTransition(() => {
       updateStream({ name })
-        .then(() => toast.success("Stream updated"))
+        .then(() => {
+          toast.success("Stream updated");
+          closeRef?.current?.click();
+        })
         .catch(() => toast.error("Something went wrong"));
     });
   };
