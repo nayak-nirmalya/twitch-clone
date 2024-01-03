@@ -34,6 +34,16 @@ export function InfoModal({
   const [name, setName] = useState(initialName);
   const [thumbnailUrl, setThumbnailUrl] = useState(initialThumbnailUrl);
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    startTransition(() => {
+      updateStream({ name })
+        .then(() => toast.success("Stream updated"))
+        .catch(() => toast.error("Something went wrong"));
+    });
+  };
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
@@ -49,7 +59,7 @@ export function InfoModal({
         <DialogHeader>
           <DialogTitle>Edit stream info</DialogTitle>
         </DialogHeader>
-        <form onSubmit={() => {}} className="space-y-14">
+        <form onSubmit={onSubmit} className="space-y-14">
           <div className="space-y-2">
             <Label>Name</Label>
             <Input
