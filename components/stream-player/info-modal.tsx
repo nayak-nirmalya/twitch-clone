@@ -19,6 +19,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { updateStream } from "@/actions/stream";
+import { UploadDropzone } from "@/lib/uploadthing";
 
 export function InfoModal({
   initialName,
@@ -97,7 +98,21 @@ export function InfoModal({
               </div>
             ) : (
               <div className="rounded-xl border outline-dashed outline-muted">
-                {/* UploadDropzone */}
+                <UploadDropzone
+                  endpoint="thumbnailUploader"
+                  appearance={{
+                    label: {
+                      color: "#FFFFFF",
+                    },
+                    allowedContent: {
+                      color: "#FFFFFF",
+                    },
+                  }}
+                  onClientUploadComplete={(res) => {
+                    setThumbnailUrl(res?.[0]?.url);
+                    router.refresh();
+                  }}
+                />
               </div>
             )}
           </div>
