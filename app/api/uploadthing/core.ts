@@ -20,7 +20,7 @@ export const ourFileRouter = {
     .onUploadComplete(async ({ file, metadata }) => {
       await db.stream.update({
         where: {
-          id: metadata.user.id,
+          userId: metadata.user.id,
         },
         data: {
           thumbnailUrl: file.url,
