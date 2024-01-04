@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 
 import { ChatToggle } from "./chat-toggle";
 import { InfoCard } from "./info-card";
+import { AboutCard } from "./about-card";
 import { Video, VideoSkeleton } from "./video";
 import { Chat, ChatSkeleton } from "./chat";
 import { Header, HeaderSkeleton } from "./header";
-import { AboutCard } from "./about-card";
 
 export function StreamPlayer({
   user,
