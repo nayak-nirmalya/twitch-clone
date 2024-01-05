@@ -30,7 +30,15 @@ export function AboutCard({
             About {hostName}
             <VerifiedMark />
           </div>
+          {isHost && <p>EDIT</p>}
         </div>
+        <div className="text-sm text-muted-foreground">
+          <span className="font-semibold text-primary">{followedByCount}</span>{" "}
+          {followedByLabel}
+        </div>
+        <p className="text-sm">
+          {bio || "This user prefers to keep an air of mystery about them."}
+        </p>
       </div>
     </div>
   );
