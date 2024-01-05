@@ -21,6 +21,19 @@ export function BioModal({ initialValue }: { initialValue: string | null }) {
   const [isPending, startTransition] = useTransition();
   const [value, setValue] = useState(initialValue || "");
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    startTransition(() => {
+      updateUser({ bio: value })
+        .then(() => {
+          toast.success("User bio updated");
+          closeRef.current?.click();
+        })
+        .catch(() => toast.error("Failed to update bio"));
+    });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,7 +45,7 @@ export function BioModal({ initialValue }: { initialValue: string | null }) {
         <DialogHeader>
           <DialogTitle>Edit user bio</DialogTitle>
         </DialogHeader>
-        <form onSubmit={() => {}} className="space-y-4">
+        <form onSubmit={onSubmit} className="space-y-4">
           <Textarea
             placeholder="User bio"
             onChange={(e) => setValue(e.target.value)}
