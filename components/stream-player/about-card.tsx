@@ -4,6 +4,8 @@ import React from "react";
 
 import { VerifiedMark } from "@/components/verified-mark";
 
+import { BioModal } from "./bio-modal";
+
 export function AboutCard({
   bio,
   followedByCount,
@@ -30,7 +32,7 @@ export function AboutCard({
             About {hostName}
             <VerifiedMark />
           </div>
-          {isHost && <p>EDIT</p>}
+          {isHost && <BioModal initialValue={bio} />}
         </div>
         <div className="text-sm text-muted-foreground">
           <span className="font-semibold text-primary">{followedByCount}</span>{" "}
