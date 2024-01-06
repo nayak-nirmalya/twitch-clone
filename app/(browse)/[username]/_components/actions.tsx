@@ -41,7 +41,9 @@ export function Actions({
     startTransition(() => {
       onBlock(userId)
         .then((data) =>
-          toast.success(`You have blocked ${data.blocked.username}`)
+          !!data
+            ? toast.success(`You have blocked ${data?.blocked.username}`)
+            : toast.success("Blocked guest")
         )
         .catch(() => toast.error("Something went wrong, failed to block"));
     });
