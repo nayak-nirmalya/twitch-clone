@@ -18,14 +18,14 @@ import { Header, HeaderSkeleton } from "./header";
 export function StreamPlayer({
   user,
   stream,
-  isFollwing,
+  isFollowing,
 }: {
   user: User & {
     stream: Stream | null;
     _count: { followedBy: number };
   };
   stream: Stream;
-  isFollwing: boolean;
+  isFollowing: boolean;
 }) {
   const { identity, name, token } = useViewerToken(user.id);
   const { collapsed } = useChatSidebar((state) => state);
@@ -55,7 +55,7 @@ export function StreamPlayer({
             imageUrl={user.imageUrl}
             hostName={user.username}
             hostIdentity={user.id}
-            isFollowing={isFollwing}
+            isFollowing={isFollowing}
             name={stream.name}
             viewerIdentity={identity}
           />
@@ -78,7 +78,7 @@ export function StreamPlayer({
             viewerName={name}
             hostName={user.username}
             hostIdentity={user.id}
-            isFollowing={isFollwing}
+            isFollowing={isFollowing}
             isChatEnabled={stream.isChatEnabled}
             isChatDelayed={stream.isChatDelayed}
             isChatFollowersOnly={stream.isChatFollowersOnly}
