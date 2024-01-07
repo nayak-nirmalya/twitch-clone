@@ -35,4 +35,6 @@ export const getStreams = async () => {
       orderBy: [{ isLive: "desc" }, { updatedAt: "desc" }],
     });
   }
+
+  return streams;
 };
