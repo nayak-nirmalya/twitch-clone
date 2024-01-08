@@ -2,8 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { Stream, User } from "@prisma/client";
 
-import { Thumbnail } from "@/components/thumbnail";
-import { UserAvatar } from "@/components/user-avatar";
+import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
+import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function ResultCard({ data }: { data: Stream & { user: User } }) {
   return (
@@ -30,5 +31,20 @@ export function ResultCard({ data }: { data: Stream & { user: User } }) {
         </div>
       </div>
     </Link>
+  );
+}
+
+export function ResultCardSkeleton() {
+  return (
+    <div className="h-full w-full space-y-4">
+      <ThumbnailSkeleton />
+      <div className="flex gap-x-3">
+        <UserAvatarSkeleton />
+        <div className="flex flex-col gap-y-1">
+          <Skeleton className="h-4 w-32" />
+          <Skeleton className="h-3 w-24" />
+        </div>
+      </div>
+    </div>
   );
 }
