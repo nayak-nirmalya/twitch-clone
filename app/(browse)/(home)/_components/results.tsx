@@ -1,8 +1,9 @@
 import React from "react";
 
 import { getStreams } from "@/lib/feed-service";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import { ResultCard } from "../result-card";
+import { ResultCard, ResultCardSkeleton } from "../result-card";
 
 export async function Results() {
   const data = await getStreams();
@@ -27,5 +28,14 @@ export async function Results() {
 }
 
 export function ResultsSkeleton() {
-  return <div>Results</div>;
+  return (
+    <div>
+      <Skeleton className="h-8 w-[290px] mb-4" />
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        {[...Array(4)].map((_, i) => (
+          <ResultCardSkeleton key={i} />
+        ))}
+      </div>
+    </div>
+  );
 }
