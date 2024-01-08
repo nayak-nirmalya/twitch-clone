@@ -1,12 +1,21 @@
 import React from "react";
 import Link from "next/link";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function ResultCard({ data }: { data: Stream & { user: User } }) {
+export function ResultCard({
+  data,
+}: {
+  data: {
+    user: User;
+    isLive: boolean;
+    name: string;
+    thumbnailUrl: string | null;
+  };
+}) {
   return (
     <Link href={`/${data.user.username}`}>
       <div className="h-full w-full space-y-4">

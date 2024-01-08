@@ -18,9 +18,7 @@ export async function Results() {
       )}
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {data.map((result) => (
-          <div key={result.id}>
-            <ResultCard data={result} />
-          </div>
+          <ResultCard key={result.id} data={result} />
         ))}
       </div>
     </div>
