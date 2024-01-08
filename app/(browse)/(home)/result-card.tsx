@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Stream, User } from "@prisma/client";
+
 import { Thumbnail } from "@/components/thumbnail";
 
 export function ResultCard({ data }: { data: Stream & { user: User } }) {
