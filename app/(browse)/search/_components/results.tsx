@@ -1,7 +1,9 @@
 import React from "react";
 
 import { getSearch } from "@/lib/search-service";
-import { ResultCard } from "./result-card";
+import { Skeleton } from "@/components/ui/skeleton";
+
+import { ResultCard, ResultCardSkeleton } from "./result-card";
 
 export async function Results({ term }: { term?: string }) {
   const data = await getSearch(term);
@@ -26,5 +28,14 @@ export async function Results({ term }: { term?: string }) {
 }
 
 export function ResultsSkeleton() {
-  return <div></div>;
+  return (
+    <div>
+      <Skeleton className="h-8 w-[290px] mb-4" />
+      <div className="flex flex-col gap-y-4">
+        {[...Array(4)].map((_, i) => (
+          <ResultCardSkeleton key={i} />
+        ))}
+      </div>
+    </div>
+  );
 }
