@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Results({ term }: { term?: string }) {
+export async function Results({ term }: { term?: string }) {
   return (
     <div>
       <h2 className="text-lg font-semibold mb-4">
@@ -8,4 +8,8 @@ export function Results({ term }: { term?: string }) {
       </h2>
     </div>
   );
+}
+
+export function ResultsSkeleton() {
+  return <div></div>;
 }
