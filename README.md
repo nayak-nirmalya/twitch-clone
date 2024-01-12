@@ -1,5 +1,7 @@
 # FullStack Twitch Clone: Next.js 14, Livestreaming, React, Prisma, Stripe, Tailwind, MySQL & TypeScript
 
+Credits: [Antonio Erdeljac](https://github.com/AntonioErdeljac)
+
 Key Features:
 
 - 📡 Streaming using RTMP / WHIP protocols
