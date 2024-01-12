@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Stream, User } from "@prisma/client";
 import { LiveKitRoom } from "@livekit/components-react";
 
 import { useViewerToken } from "@/hooks/use-viewer-token";

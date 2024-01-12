@@ -18,7 +18,7 @@ export default async function CreatorPage({
 
   return (
     <div className="h-full">
-      <StreamPlayer user={user} stream={user.stream} isFollwing={true} />
+      <StreamPlayer user={user} stream={user.stream} isFollowing={true} />
     </div>
   );
 }
