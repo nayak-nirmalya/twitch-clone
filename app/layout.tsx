@@ -10,7 +10,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Twitch Clone",
+  title: {
+    template: "%s | Twitch Clone",
+    default: "Twitch Clone",
+  },
   description: "Twitch Clone with Next.js, React.js, TailWindCSS & TypeScript.",
 };
 
