@@ -1,5 +1,11 @@
 import React from "react";
+import { Metadata } from "next";
+
 import { Logo } from "./_components/logo";
+
+export const metadata: Metadata = {
+  title: 'Authentication',
+};
 
 export default function AuthLayout({
   children,
