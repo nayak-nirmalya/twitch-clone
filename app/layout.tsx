@@ -4,15 +4,16 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "sonner";
 
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Twitch Clone",
-    default: "Twitch Clone",
+    template: "%s | GameHub",
+    default: "GameHub",
   },
   description: "Twitch Clone with Next.js, React.js, TailWindCSS & TypeScript.",
 };
